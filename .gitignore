@@ -1,0 +1,8 @@
+# Data files and folders
+data/
+
+# Python cache and environments
+__pycache__/
+*.pyc
+.venv/
+venv/
