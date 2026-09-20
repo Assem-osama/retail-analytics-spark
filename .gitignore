@@ -1,8 +1,16 @@
-# Data files and folders
+# Data files and folders (CRITICAL)
 data/
 
-# Python cache and environments
+# Python caches
 __pycache__/
 *.pyc
-.venv/
+.env
+.venv
 venv/
+
+# Spark and IDE files
+spark-warehouse/
+derby.log
+metastore_db/
+.vscode/
+.idea/
