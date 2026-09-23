@@ -174,6 +174,8 @@ def validate_gold(spark):
         source_net_revenue - gold_net_revenue
     )
 
+    if abs(net_difference) > 1.0 or abs(units_difference) > 0:
+        raise ValueError(f"Data Validation Failed! Net Diff: {net_difference}, Units Diff: {units_difference}")
 
     print(f"Gross Sales Difference:      {gross_difference:,.2f}")
     print(f"Return Amount Difference:    {return_difference:,.2f}")
@@ -320,13 +322,7 @@ def validate_gold(spark):
         f"Max Country Rank:  "
         f"{country_df.agg(max('CountryRank')).first()[0]}"
     )
-
-
-    # 12. FINAL 
-
-    import time
-    print("Waiting for 5 minutes so you can check the Spark UI at http://localhost:4040")
-    time.sleep(300)
+    
     return daily_sales_df.count()
 
 

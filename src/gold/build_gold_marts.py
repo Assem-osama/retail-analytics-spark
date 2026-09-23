@@ -458,11 +458,6 @@ def run_gold(spark):
     print("GOLD DATA MARTS BUILD COMPLETED")
 
 
-
-    import time
-    print("Waiting for 5 minutes so you can check the Spark UI at http://localhost:4040")
-    time.sleep(300)
-
     return daily_sales_check.count()
 
 

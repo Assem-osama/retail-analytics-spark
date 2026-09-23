@@ -193,7 +193,7 @@ def run_silver(spark):
     valid_silver_df = (
         silver_df
         .filter(col("Price") > 0)
-        .filter(col("StockCode").rlike("^[0-9]{5}"))
+        .filter(col("StockCode").rlike("^[a-zA-Z0-9]{5,}"))
     )
     
     before_quality = silver_df.count()
