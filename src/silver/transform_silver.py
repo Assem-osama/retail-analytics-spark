@@ -301,8 +301,7 @@ print("=" * 80)
 
 
 import time
-print("Waiting for 5 minutes so you can check the Spark UI... ⏳")
+print("Waiting for 5 minutes so you can check the Spark UI at http://localhost:4040")
 time.sleep(300)
-spark.stop()
 
 spark.stop()
